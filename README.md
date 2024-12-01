@@ -20,7 +20,15 @@ A minimalist prompt for the Fish shell with the following features:
 ## Installation
 
 1. Clone this repository to your local machine.
-2. Copy or link the `fish_prompt.fish` file to your Fish Shell configuration directory (usually `~/.config/fish/functions/`).
+2. Copy or link the `functions/fish_prompt.fish` file to your Fish Shell configuration directory (usually `~/.config/fish/functions/`).
+
+### Alternative using Fisher
+
+You can also install it using Fisher (https://github.com/jorgebucaran/fisher):
+
+```sh
+fisher install rlizana/fish-theme-trey
+```
 
 ## Usage
 
