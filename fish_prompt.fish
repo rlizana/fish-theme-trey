@@ -1,3 +1,5 @@
+set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
+
 function _git_branch_name
   command git symbolic-ref HEAD 2>/dev/null | sed -e 's|^refs/heads/||'
 end
@@ -44,6 +46,12 @@ function fish_prompt
   # cwd
   set -l cwd $blue(prompt_pwd)
 
+  # virtualenv
+  set -l virtualenv $VIRTUAL_ENV_PROMPT
+  if test -n "$virtualenv"
+    set virtualenv_prompt "$green($virtualenv)$normal "
+  end
+
   # prompt
-  echo -n -s $user_indicator ':' $cwd $git_info ' ' $status_indicator $normal ' '
+  echo -n -s $virtualenv_prompt $user_indicator ' ' $cwd $git_info ' ' $status_indicator $normal ' '
 end
